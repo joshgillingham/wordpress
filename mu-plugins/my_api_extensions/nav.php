@@ -14,7 +14,7 @@ class My_API_Nav {
     /**
     * Register our routes with the wordpress api
     */
-    public function register_routes() {
+    public static function register_routes() {
         
         // Navigation
         register_rest_route(Api_Extensions::$namespace, '/navigation', array(
@@ -39,7 +39,7 @@ class My_API_Nav {
     /**
     * Get navigation
     */
-    public function getNavigation() {
+    public static function getNavigation() {
         $menu = array();
         
         try {
@@ -59,7 +59,7 @@ class My_API_Nav {
     /**
     * Get page by id
     */
-    public function getPageOrPost( WP_REST_Request $request ) {
+    public static function getPageOrPost( WP_REST_Request $request ) {
 
         $page;
 

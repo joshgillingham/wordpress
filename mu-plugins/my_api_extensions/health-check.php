@@ -11,7 +11,7 @@ class My_API_HealthCheck {
     /**
     * Register our routes with the wordpress api
     */
-    public function register_routes() {
+    public static function register_routes() {
 
         register_rest_route(Api_Extensions::$namespace, '/health-check', array(
             'methods'  => WP_REST_Server::READABLE,
@@ -22,7 +22,7 @@ class My_API_HealthCheck {
     /**
     * Callback function for an update check
     */
-    public function health_check() {
+    public static function health_check() {
         include_once "./wp-admin/includes/update.php";
         
         $cur = get_preferred_from_update_core();
